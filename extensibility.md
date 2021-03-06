@@ -425,8 +425,8 @@ in a test environment.  For more information see [hk2-metdata-generator][hk2-met
 [immediateerrorhandler]: apidocs/org/glassfish/hk2/utilities/ImmediateErrorHandler.html
 [service]: apidocs/org/jvnet/hk2/annotations/Service.html
 [dynamicconfiguration]: apidocs/org/glassfish/hk2/api/DynamicConfiguration.html
-[scope]: http://docs.oracle.com/javaee/6/api/javax/inject/Scope.html
-[singleton]: http://docs.oracle.com/javaee/6/api/javax/inject/Singleton.html
+[scope]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Scope.html
+[singleton]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Singleton.html
 [ctm-example]: ctm-example.html
 [proxyctl]: apidocs/org/glassfish/hk2/api/ProxyCtl.html
 [proxiable]: apidocs/org/glassfish/hk2/api/Proxiable.html
@@ -436,7 +436,7 @@ in a test environment.  For more information see [hk2-metdata-generator][hk2-met
 [proxyforsamescope]: apidocs/org/glassfish/hk2/api/ProxyForSameScope.html
 [descriptor]: apidocs/org/glassfish/hk2/api/Descriptor.html
 [hk2loader]: apidocs/org/glassfish/hk2/api/HK2Loader.html
-[javaxinject]: http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html
+[javaxinject]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Inject.html
 [injectionresolver]: apidocs/org/glassfish/hk2/api/InjectionResolver.html
 [injectionpointindicator]: apidocs/org/glassfish/hk2/api/InjectionPointIndicator.html
 [validationservice]: apidocs/org/glassfish/hk2/api/ValidationService.html

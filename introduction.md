@@ -371,12 +371,12 @@ can be used in your own applications.
 [jsr330]: http://www.jcp.org/en/jsr/detail?id=330
 [api-overview]: ./api-overview.html
 [extensibility]: ./extensibility.html
-[inject]: http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html
+[inject]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Inject.html
 [iterable]: http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 [iterableprovidernamed]: apidocs/org/glassfish/hk2/api/IterableProvider.html#named%28java.lang.String%29
 [iterableprovider]: apidocs/org/glassfish/hk2/api/IterableProvider.html
 [providerget]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html#get%28%29
 [provider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html
-[named]: http://docs.oracle.com/javaee/6/api/javax/inject/Named.html
-[qualifier]: http://docs.oracle.com/javaee/6/api/javax/inject/Qualifier.html
+[named]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Named.html
+[qualifier]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Qualifier.html
 [atinjectprovider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html

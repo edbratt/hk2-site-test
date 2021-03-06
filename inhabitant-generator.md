@@ -318,4 +318,4 @@ methods of the stub's implementation.
 [habitatgenerator]: apidocs/org/jvnet/hk2/generator/HabitatGenerator.html
 [stub]: apidocs/org/jvnet/hk2/utilities/Stub.html
 [rank]: apidocs/org/glassfish/hk2/api/Rank.html
-[named]: http://docs.oracle.com/javaee/6/api/javax/inject/Named.html
+[named]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Named.html
