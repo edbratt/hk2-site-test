@@ -22,30 +22,30 @@
 
 ## Compatibility
 
-This page describes the features of the HK2 2.0 API.  The Habitat API
+This page describes the features of the GlassFish HK2 2.0 API.  The Habitat API
 from version 1.x of HK2 has been replaced with a new interface called
 [ServiceLocator][servicelocator]. More information can be found [here][apioverview].
 
-## Features of HK2
+## Features of GlassFish HK2
 
-HK2 has many features for customizing the system.  This page is intended to give an
-overview of each feature.  Among the set of HK2 features are:
+GlassFish HK2 has many features for customizing the system.  This page is intended to give an
+overview of each feature.  Among the set of GlassFish HK2 features are:
 
 ## Events
 
-It is possible to send messages from one service to another using the HK2 event feature.  The event feature is allows for unrelated
+It is possible to send messages from one service to another using the GlassFish HK2 event feature.  The event feature is allows for unrelated
 services to message each other without prior coordination (other than on the Type of event).  It is a pluggable event service,
 which allows for user defined qualities of service between the publishers and subscribers.
 
-The HK2 event service is described fully [here][events].
+The GlassFish HK2 event service is described fully [here][events].
 
 An example of plugging in a different event distributor can be found [here][threaded-events-example].
 
 ### Adding a Scope and Context to the system
 
-In HK2 a [Context][context] is a class that is used to control the lifecycle of service instances.  A [Scope][scope] is an annotation that is put onto another
+In GlassFish HK2 a [Context][context] is a class that is used to control the lifecycle of service instances.  A [Scope][scope] is an annotation that is put onto another
 annotation that is used to associate any service with a particular [Context][context].  All services
-in HK2 are associated with a single scope.
+in GlassFish HK2 are associated with a single scope.
 
 There are two system provided scope/context pairs.  The default [Scope][scope] for services annotated with [@Service][service] is the
 [Singleton][singleton] scope.  Service instances in the [Singleton][singleton] scope are created once and are never destroyed.
@@ -65,7 +65,7 @@ To make this more clear, we have two examples of user scope/context pairs:
 
 ## PerThread Scope
 
-There is a per-thread scope/context pair optionally supported in HK2.
+There is a per-thread scope/context pair optionally supported in GlassFish HK2.
 Services marked with [PerThread][perthread] have their life cycle defined by the thread they are on.
 Two different threads injecting a service from the [PerThread][perthread] scope will get different objects.
 Two objects on the same thread injecting a [PerThread][perthread] scope service will get the same object.
@@ -74,7 +74,7 @@ The [PerThread][perthread] scope can be added to any [ServiceLocator][serviceloc
 
 ## InheritableThread Scope
 
-There is a inheritable thread scope/context pair optionally supported in HK2.
+There is a inheritable thread scope/context pair optionally supported in GlassFish HK2.
 Services marked with [InheritableThread][inheritablethread] are similar to PerThread scoped services with one caveat,
 their life cycle defined by the thread they are on and are inherited by its child threads.
 Two different threads injecting a service from the [InheritableThread][inheritablethread] scope will get different objects.
@@ -85,7 +85,7 @@ The [InheritableThread][inheritablethread] scope can be added to any [ServiceLoc
 
 ## Immediate Scope
 
-There is an Immediate scope/context pair optionally supported in HK2.
+There is an Immediate scope/context pair optionally supported in GlassFish HK2.
 Services marked with [Immediate][immediate] will be started as soon as their
 [ActiveDescriptors][activedescriptor] are added to the [ServiceLocator][servicelocator].  They are destroyed when
 their [ActiveDescriptors][activedescriptor] are removed from the [ServiceLocator][servicelocator].
@@ -111,7 +111,7 @@ method.
 
 ## Proxies
 
-Rather than injecting an instance of a service itself, HK2 can also inject a proxy to that service.  There are a few
+Rather than injecting an instance of a service itself, GlassFish HK2 can also inject a proxy to that service.  There are a few
 reasons that you might want to use proxies.  One reason is because the lifeycle of two different scopes may be
 different.  For example, you might have something like a RequestScoped scope, and you would like to inject it
 into a Singleton scoped object.  But the Singleton scoped object is only injected once, and the RequestScoped service
@@ -125,13 +125,13 @@ never invokes on the proxy, it is possible the service will never get started!  
 proxy into a service rather than the real service.  The proxy will not attempt to create the service until some method
 of that proxy is invoked.
 
-All proxies created by HK2 will also implement [ProxyCtl][proxyctl].
+All proxies created by GlassFish HK2 will also implement [ProxyCtl][proxyctl].
 [ProxyCtl][proxyctl] can be used to force the creation of the underlying service without calling any of the methods of that service.
 Of course every service that is to be proxied must be proxiable, so the service to be proxied must either be an interface or a class that is not declared final,
 has no final fields or methods and has a public zero-argument constructor.  In general it is better to proxy interfaces
 rather than classes.
 
-In order to have HK2 create a proxy for your service rather than the service itself you can create a proxiable scope.
+In order to have GlassFish HK2 create a proxy for your service rather than the service itself you can create a proxiable scope.
 A proxiable scope is just like a normal scope, except that the scope annotation is also annotated with [Proxiable][proxiable].
 All services injected or looked up from this scope will be given a proxy rather than the real service.
 
@@ -174,7 +174,7 @@ public class AnotherService {
 
 By default if a service is proxiable then it will be proxied even when being injected into other services within the same scope.
 This allows for the lazy use case.  However, it is sometimes the case that it is counter-productive to proxy services when
-they are injected into other services of the same scope.  HK2 supports Proxiable scopes that do NOT proxy services when they
+they are injected into other services of the same scope.  GlassFish HK2 supports Proxiable scopes that do NOT proxy services when they
 are being injected into the same scope.  The [Proxiable][proxiable] annotation has a field called proxyForSameScope that by default is true but which can be set to false.
 The following scope is a proxiable scope where services injected into other services in the same scope will not be proxied:
 
@@ -201,8 +201,8 @@ public class ExpensiveRequestService {
 
 ### Proxies and equals()
 
-HK2 treats the equals method of Object slightly differently from other methods.  If the incoming parameter of the equals
-method is itself a proxy, then HK2 will unwrap that object and send in the unproxied object.  This is to ensure that
+GlassFish HK2 treats the equals method of Object slightly differently from other methods.  If the incoming parameter of the equals
+method is itself a proxy, then GlassFish HK2 will unwrap that object and send in the unproxied object.  This is to ensure that
 two proxy instances that are pointing to the same underlying service will return true even if the equals method is
 not explicitly implemented.  Consider the following example:
 
@@ -212,18 +212,18 @@ Foo foo2 = locator.getService(Foo.class);
 Assert.assertTrue(foo1.equals(foo2));
 ```
 
-In the example above if foo1 and foo2 are proxies that point to the same underlying service then if hk2 did NOT treat equals
+In the example above if foo1 and foo2 are proxies that point to the same underlying service then if GlassFish HK2 did NOT treat equals
 specially the assertion of truth would fail, since foo1 would have its equals method called being given the proxy of foo2, not
 the underlying object of foo2.  Instead, because equals is treated specially, the assertion will be true since foo2 will be
 unwrapped and the underlying object will get passed in.
 
-No other method is treated in this way by the proxying code of HK2.
+No other method is treated in this way by the proxying code of GlassFish HK2.
 
 
 ## ClassLoading
 
-Classloading is an interesting challenge in any Java environment.  HK2 defers classloading as long as possible, but at some
-point, it must get access to the true class in order to create and inject instances.  At that moment, HK2 will attempt
+Classloading is an interesting challenge in any Java environment.  GlassFish HK2 defers classloading as long as possible, but at some
+point, it must get access to the true class in order to create and inject instances.  At that moment, GlassFish HK2 will attempt
 to reify the descriptor, using the [ServiceLocator][servicelocator] reify method.
 
 Every [Descriptor][descriptor] bound into the system has an associated [HK2Loader][hk2loader].
@@ -231,7 +231,7 @@ If the getLoader method of [Descriptor][descriptor] returns null, then the syste
 for loading classes will be used.  Otherwise, the given [HK2Loader][hk2loader] will be used to load the class described by this [Descriptor][descriptor].
 
 The system algorithm used when the getLoader method of [Descriptor][descriptor] returns null is to first consult the classloader of the class being injected into, if available.
-If not available, HK2 will use the classloader that loaded HK2 itself.
+If not available, GlassFish HK2 will use the classloader that loaded GlassFish HK2 itself.
 Failing this, the class will fail to be loaded and an exception will be thrown.
 
 Note that since the user is providing an implementation of [HK2Loader][hk2loader]
@@ -261,16 +261,16 @@ This [example][custom-resolver-example] adds a custom injection resolver that cu
 
 There are times when the set of services to be injected is not completely known before the system is booted.  In
 these cases it may be useful to use a [Just In Time Injection Resolver][justintimeinjectionresolver].  The
-[Just In Time Injection Resolver][justintimeinjectionresolver] is an hk2 service that is called whenever the
+[Just In Time Injection Resolver][justintimeinjectionresolver] is a GlassFish HK2 service that is called whenever the
 system cannot find a suitable service for a given [Injection Point][injectee].  If the
 [Just In Time Injection Resolver][justintimeinjectionresolver] service knows how to find the service then
-it can add the service to the ServiceLocator and tell hk2 to look again for the service.  A good example
+it can add the service to the ServiceLocator and tell GlassFish HK2 to look again for the service.  A good example
 of using this would be when retrieving services from a remote system, or from some other service oriented
 system such as OSGi, Spring or Guice.
 
 ## Security
 
-Certain operations that are performed by the users of HK2 can be validated.  Validation can either
+Certain operations that are performed by the users of GlassFish HK2 can be validated.  Validation can either
 allow or deny the operation in question.  The operations that can be validated are adding a
 service to the [ServiceLocator][servicelocator], removing a service from the [ServiceLocator][servicelocator],
 injecting a service into another service or looking up a service from the [ServiceLocator][servicelocator].
@@ -295,13 +295,13 @@ an automatic listener for anything that it is injected into.
 
 ## Interception
 
-[AOP Alliance][aopalliance] method and constructor interception is supported by HK2.  Methods and constructors that are to be
-intercepted are identified using instances of the HK2 [InterceptionService][interceptionservice].  An example of
+[AOP Alliance][aopalliance] method and constructor interception is supported by GlassFish HK2.  Methods and constructors that are to be
+intercepted are identified using instances of the GlassFish HK2 [InterceptionService][interceptionservice].  An example of
 how to use the [InterceptionService][interceptionservice] can be found [here][aopexample].
 
-There is an HK2 provided default implementation of the [InterceptionService][interceptionservice] which uses
+There is an GlassFish HK2 provided default implementation of the [InterceptionService][interceptionservice] which uses
 annotations to indicate services that should be intercepted, those that should do the intercepting and to
-bind intercepted methods and constructors to their interceptors.  Information about the HK2 provided
+bind intercepted methods and constructors to their interceptors.  Information about the GlassFish HK2 provided
 default implementation of the [InterceptionService][interceptionservice] can be found [here][aopdefault].
 
 ## Dynamic Configuration Listeners
@@ -312,27 +312,27 @@ the set of [ActiveDescriptors][activedescriptor] in a [ServiceLocator][servicelo
 
 ## Class Analysis
 
-HK2 often needs to look at a java class in order to find things about that class such as its set
-of constructors, methods or fields.  The choices HK2 makes is usually determined by specifications
+GlassFish HK2 often needs to look at a java class in order to find things about that class such as its set
+of constructors, methods or fields.  The choices GlassFish HK2 makes is usually determined by specifications
 such as JSR-330 or JSR-299.  However, in some cases different specifications make different choices,
-or the user of the HK2 system may have some other scheme it would like to use in order to
-select the parts of class which HK2 should manipulate.  For example, the JAX-RS specification
+or the user of the GlassFish HK2 system may have some other scheme it would like to use in order to
+select the parts of class which GlassFish HK2 should manipulate.  For example, the JAX-RS specification
 requires the system to choose the constructor with the largest number of parameters (by default)
 while the JSR-299 specification requires the system to choose the zero-argument constructor
 or else fail.
 
-The HK2 system allows the user to register named implementation of the [ClassAnalyzer][classanalyzer]
-in order to modify or completely replace the constructors, fields and methods HK2 would choose.
-Individual HK2 [Descriptors][descriptor] can set the name of the [ClassAnalyzer][classanalyzer]
+The GlassFish HK2 system allows the user to register named implementation of the [ClassAnalyzer][classanalyzer]
+in order to modify or completely replace the constructors, fields and methods GlassFish HK2 would choose.
+Individual GlassFish HK2 [Descriptors][descriptor] can set the name of the [ClassAnalyzer][classanalyzer]
 that should be used to analyze the implementation class.
 
-HK2 always adds an implementation of [ClassAnalyzer][classanalyzer] with the name "default" that implements
+GlassFish HK2 always adds an implementation of [ClassAnalyzer][classanalyzer] with the name "default" that implements
 the JSR-299 style of selection.
 
 ## Run Level Services
 
 If your system has sets of services that need to come up and down in an orderly fashion consider
-using the HK2 Run Level Services.  The Run Level Service allows one to specify levels at
+using the GlassFish HK2 Run Level Services.  The Run Level Service allows one to specify levels at
 which services come up and down and will bring these services up and down when the system run level
 has changed.
 
@@ -385,7 +385,7 @@ be mostly invisible to your application unless you are doing complex work with t
 
 ## Error Handling
 
-Errors can pop up in various phases of the HK2 service lifecycle.  Users can register implementations of the
+Errors can pop up in various phases of the GlassFish HK2 service lifecycle.  Users can register implementations of the
 [ErrorService][errorservice] in order to be notified when errors occur.  There are currently four types of
 errors that the system sends to the [ErrorService][errorservice]:
 
@@ -398,16 +398,16 @@ Using the [ErrorService][errorservice] can be a convenient place to standardize 
 
 ## Operations
 
-An HK2 Operation is a scope/context pair used to implement scopes like RequestScope, ApplicationScope
+A GlassFish HK2 Operation is a scope/context pair used to implement scopes like RequestScope, ApplicationScope
 or TransactionScope.  Any service lifecycle (context) for which only one instance of that context can be
-active at a time is a candidate to be an HK2 Operation.  RequestScope is a good example in most containers,
+active at a time is a candidate to be a GlassFish HK2 Operation.  RequestScope is a good example in most containers,
 as each thread is generally tied to a single request.
 
-More information about HK2 Operations and an example can be found [here][operations].
+More information about GlassFish HK2 Operations and an example can be found [here][operations].
 
 ## Stub Generation
 
-HK2 has a [Stub][stub] annotation that can be put onto abstract classes.  The hk2-metadata-generator
+GlassFish HK2 has a [Stub][stub] annotation that can be put onto abstract classes.  The hk2-metadata-generator
 will then generate a class that implements the unimplemented methods on the abstract class.  This
 is very useful when testing as simple stubs can be made of services that would normally not work properly
 in a test environment.  For more information see [hk2-metdata-generator][hk2-metadata-generator].

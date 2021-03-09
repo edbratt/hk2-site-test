@@ -14,22 +14,23 @@
 [//]: # " SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 "
 [//]: # " "
 
-HK2 is an implementation of JSR-330 in a JavaSE environment.
+Eclipse GlassFish HK2 is an implementation of [Jakarta Dependency Injection](https://jakarta.ee/specifications/dependency-injection/). This project
+began as HK2 as an implementation of JSR-330 in a JavaSE environment.
 
 
-[JSR-330](http://jcp.org/aboutJava/communityprocess/final/jsr330/) defines services and injection points that can be dynamically discovered at runtime and which allow for Inversion of Control (IoC) and dependency injection (DI).
+[JSR-330](http://jcp.org/aboutJava/communityprocess/final/jsr330/) defined services and injection points that can be dynamically discovered at runtime and which allow for Inversion of Control (IoC) and dependency injection (DI). Eclipse Dependency Injection continues to evolve Dependency Injection for Jakarta EE.
 
 
-HK2 provides an API for control over its operation and has the ability to automatically load services into the container.
+GlassFish HK2 provides an API for control over its operation and has the ability to automatically load services into the container.
 
 
 It is the foundation for the GlassFish V3 and V4 application servers as well as other products.
 
 
-HK2 also has powerful features that can be used to perform tasks such as looking up services or customizing you injections, as well as several extensibility features allowing the users to connect with other container technologies
+GlassFish HK2 also has powerful features that can be used to perform tasks such as looking up services or customizing you injections, as well as several extensibility features allowing the users to connect with other container technologies
 
 
-The following list gives an overview of some of the things that can be customized or extended with HK2:
+The following list gives an overview of some of the things that can be customized or extended with GlassFish HK2:
 - Custom lifecycles and scopes
 - Events
 - AOP and other proxies
@@ -43,22 +44,22 @@ The following list gives an overview of some of the things that can be customize
 Getting started
 ----------------
 
-Read the [introduction](introduction.html) and [get started](getting-started.html) with HK2.
+Read the [introduction](introduction.html) and [get started](getting-started.html) with GlassFish HK2.
 
 
 API overview
 ------------
 
-[Learn](api-overview.html) more about the HK2 API, or [browse](apidocs/index.html) the javadoc.
+[Learn](api-overview.html) more about the GlassFish HK2 API, or [browse](apidocs/index.html) the javadoc.
 
 
 Features
 --------
 
-[Learn](extensibility.html) more about the features of HK2
+[Learn](extensibility.html) more about the features of GlassFish HK2
 
 
 Integration
 -----------
 
-HK2 is well integrated with [Eclipse GlassFish](https://glassfish.org), [Spring](http://www.springsource.org) and others !
+GlassFish HK2 is well integrated with [Eclipse GlassFish](https://glassfish.org). Legacy HK2 is also used in many projects, [Spring](http://www.springsource.org) and others !

@@ -17,20 +17,20 @@
 * TOC
 {:toc}
 
-# Introduction to HK2
+# Introduction to GlassFish HK2
 
-This page describes the HK2 2.0 API, which is based on JSR-330 standard annotations.
+This page describes the GlassFish HK2 2.0 API, which is based on JSR-330 standard annotations.
 Also, Habitat has been replaced with a new interface called [ServiceLocator][servicelocator].
 
-HK2 is a declarative framework for services using annotations like [Contract][contract] and [Service][service].
-This page is intended to show simple usages of HK2 mainly using the standard JSR-330 API.
+GlassFish HK2 is a declarative framework for services using annotations like [Contract][contract] and [Service][service].
+This page is intended to show simple usages of GlassFish HK2 mainly using the standard JSR-330 API.
 
-For information about using the HK2 programmatic API see [this page][api-overview].
-For information about HK2 extensibility options see [this page][extensibility]
+For information about using the GlassFish HK2 programmatic API see [this page][api-overview].
+For information about GlassFish HK2 extensibility options see [this page][extensibility]
 For information about JSR-330 see [this site][jsr330].
 
-This page assumes that you are using the HK2 provided ability to automatically find and
-register services in an HK2 registry.  For more information on how to control what services
+This page assumes that you are using the GlassFish HK2 provided ability to automatically find and
+register services in an GlassFish HK2 registry.  For more information on how to control what services
 are automatically bound to what registries see TBD.
 
 ## Getting Started
@@ -133,9 +133,9 @@ public class FooImpl implements Foo {
 }
 ```
 
-Upon construction the book field will be filled in by HK2.  You can also inject into the constructor of FooImpl, or
+Upon construction the book field will be filled in by GlassFish HK2.  You can also inject into the constructor of FooImpl, or
 use an initializer method.  In both of those cases the constructor or method must be annotated with
-[@Inject][inject] in order to tell HK2 which is the proper constructor or method to call.
+[@Inject][inject] in order to tell GlassFish HK2 which is the proper constructor or method to call.
 
 Here is FooImpl implemented with constructor injection:
  
@@ -355,13 +355,13 @@ instance of [IterableProvider][iterableprovider].
  
 ## Conclusion
 
-The majority of usages of HK2 should use standard JSR-330 annotations along with
+The majority of usages of GlassFish HK2 should use standard JSR-330 annotations along with
 [@Service][service] and [@Contract][contract].
 In some cases code will also use [IterableProvider][iterableprovider] as outlined above.
-In even rarer cases the code may need extremely specialized control over HK2 by using the
+In even rarer cases the code may need extremely specialized control over GlassFish HK2 by using the
 programmatic API, as described [here][api-overview].
 
-We have gone through many simple examples which have shown the basic functionality of HK2 and JSR-330 in your
+We have gone through many simple examples which have shown the basic functionality of GlassFish HK2 and JSR-330 in your
 applications.  Hopefully they have provided you with knowledge about how these annotations work and how they
 can be used in your own applications.
 
@@ -377,6 +377,6 @@ can be used in your own applications.
 [iterableprovider]: apidocs/org/glassfish/hk2/api/IterableProvider.html
 [providerget]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html#get%28%29
 [provider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html
-[named]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Named.html
+[named]: http://docs.oracle.com/javaee/6/api/javax/inject/Named.html
 [qualifier]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Qualifier.html
 [atinjectprovider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html
