@@ -375,8 +375,8 @@ can be used in your own applications.
 [iterable]: http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 [iterableprovidernamed]: apidocs/org/glassfish/hk2/api/IterableProvider.html#named%28java.lang.String%29
 [iterableprovider]: apidocs/org/glassfish/hk2/api/IterableProvider.html
-[providerget]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html#get%28%29
-[provider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html
+[providerget]: http://javax-inject.github.io/javax-inject/api/javax/inject/Provider.html#get%28%29
+[provider]: http://javax-inject.github.io/javax-inject/api/javax/inject/Provider.html
 [named]: http://docs.oracle.com/javaee/6/api/javax/inject/Named.html
 [qualifier]: https://jakarta.ee/specifications/platform/8/apidocs/javax/inject/Qualifier.html
-[atinjectprovider]: http://atinject.googlecode.com/svn/trunk/javadoc/javax/inject/Provider.html
+[atinjectprovider]: http://javax-inject.github.io/javax-inject/api/javax/inject/Provider.html

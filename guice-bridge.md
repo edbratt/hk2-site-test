@@ -136,11 +136,11 @@ The above method will create a [Guice][guice] [Injector][injector]
 where services created by Guice can be injected with HK2 services (using the [HK2Inject][hk2inject] annotation).
 Also services created by HK2 can be injected with [Guice][guice] services (using any supported HK2 injection annotation).
 
-[guice]: http://code.google.com/p/google-guice/
-[injector]: http://google-guice.googlecode.com/svn/trunk/javadoc/com/google/inject/Injector.html
+[guice]: https://github.com/google/guice
+[injector]: https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Injector.html
 [servicelocator]: apidocs/org/glassfish/hk2/api/ServiceLocator.html
 [guicebridge]: apidocs/org/jvnet/hk2/guice/bridge/api/GuiceBridge.html
 [guiceintohk2bridge]: apidocs/org/jvnet/hk2/guice/bridge/api/GuiceIntoHK2Bridge.html
 [bridgeguiceinjector]: apidocs/org/jvnet/hk2/guice/bridge/api/GuiceIntoHK2Bridge.html#bridgeGuiceInjector
 [hk2inject]: apidocs/org/jvnet/hk2/guice/bridge/api/HK2Inject.html
-[module]: http://google-guice.googlecode.com/svn/trunk/javadoc/com/google/inject/Module.html
+[module]: https://google.github.io/guice/api-docs/latest/javadoc/com/google/inject/Module.html
