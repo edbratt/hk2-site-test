@@ -1,6 +1,6 @@
-remote_theme: jakartaee/jekyll-theme-jakarta-ee
+remote_theme: eclipsefdn/jekyll-theme-eclipsefdn
 
-title: Eclipse HK2 - Dependency Injection Kernel
+title: GlassFish HK2 - Dependency Injection Kernel
 description: A light-weight and dynamic dependency injection framework
 
 # sidebar links url
