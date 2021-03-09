@@ -63,3 +63,8 @@ Integration
 -----------
 
 GlassFish HK2 is well integrated with [Eclipse GlassFish](https://glassfish.org). Legacy HK2 is also used in many projects, [Spring](http://www.springsource.org) and others !
+
+Site Map
+--------
+
+All files in this site are listed on the [Site Map](sitemap) page.
